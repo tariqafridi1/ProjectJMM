@@ -2,7 +2,7 @@
 
 namespace ProjectJMM.Models
 {
-    public class Item
+    public class Item 
     {
         [Key]
         public int Id { get; set; }

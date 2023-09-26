@@ -1,12 +1,12 @@
-﻿@model IEnumerable<ProjectJMM.Models.Item>
+﻿@model IEnumerable<ProjectJMM.Models.Expense>
 
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-success">BorrowedItemList</h2>
+            <h2 class="text-success">ExpenseList</h2>
         </div>
         <div class="col-6 text-center">
-            <a asp-controller="Item" asp-action="Create" class="btn btn-dark">Create New Item</a>
+            <a asp-controller="Expense" asp-action="Create" class="btn btn-dark">Create Expense</a>
         </div>
     </div>
     <br />
@@ -16,29 +16,29 @@
         <table class="table table-bordered table-striped" style="width:90%">
             <thead>
                 <tr>
+                   @* <th>
+                        Id
+                    </th>*@
                     <th>
-                        Item Name
+                        ExpenseName
                     </th>
                     <th>
-                        Borrow
-                    </th>
-                    <th>
-                        lender
+                        Amount
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var expense in Model)
                 {
                     <tr>
-                        <td width="40%">@item.ItemName</td>
-                        <td width="40%">@item.Borrow</td>
-                        <td width="40%">@item.lender</td>
+@*                        <td width="40%">@item.Id</td>
+*@                        <td width="40%">@expense.ExpenseName</td>
+                        <td width="40%">@expense.Amount</td>
                     </tr>
                 }
             </tbody>
         </table>
     }
-    
+
 
 </div>

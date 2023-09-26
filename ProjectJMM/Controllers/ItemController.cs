@@ -13,14 +13,13 @@ namespace ProjectJMM.Controllers
             applicationDbContext1 = applicationDbContext;
         }
         
-        [HttpGet]
         public IActionResult Index()
         {
             IEnumerable<Item> objList = applicationDbContext1.Items;
             return View(objList);
         }
         [HttpGet]
-        
+
         public IActionResult Create()
         {
             return View();

@@ -1,34 +1,36 @@
-﻿@model ProjectJMM.Models.Item
+﻿@model ProjectJMM.Models.Expense
 <form method="post" asp-action="Create">
     <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group row">
-            <h2 class="text-black-50 pe-lg-3">Add Item</h2>
+            <h2 class="text-black-50 pe-lg-3">Add Expense</h2>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="form-group row">
+                   @* <div class="form-group row">
                         <div class="col-4">
-                            <label asp-for="ItemName"></label>
-                        </div>
+                            <label asp-for="Id"></label>
+                        </div>*@
                     <div class="col-4">
-                        <label asp-for="Borrow"></label>
+                        <label asp-for="ExpenseName"></label>
                     </div>
                     <div class="col-4">
-                        <label asp-for="lender"></label>
+                        <label asp-for="Amount"></label>
                     </div>
                     
                 </div>
                 <div class="form-group row">
-                    <div class="col-4">
-                        <input asp-for="ItemName" class="form-control"/>
+                    @*<div class="col-4">
+                        <input asp-for="Id" class="form-control"/>
                       
+                    </div>*@
+                    <div class="col-4">
+                        <input asp-for="ExpenseName" class="form-control" />
+                        <span asp-validation-for="ExpenseName" class="text-danger"></span>
                     </div>
                     <div class="col-4">
-                        <input asp-for="Borrow" class="form-control" />
-
-                    </div>
-                    <div class="col-4">
-                        <input asp-for="lender" class="form-control" />
+                        <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
 
                     </div>
                 </div>
@@ -48,6 +50,9 @@
         </div>
     </div>
 </form>
+@*@section script{
+    @{<partial name="_ValidationScriptsPartial"/>}
+}*@
 @*@model ProjectJMM.Models.Item
 <form method="post" asp-action="Create">
 
