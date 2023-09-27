@@ -9,6 +9,9 @@ namespace ProjectJMM.DBData
 
         public DbSet<Item> Items { get; set; }
         public DbSet<Expense> Expenses { get; set; }
+        //ExpenseCategories
+        public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
+
     }
 
 }
